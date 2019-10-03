@@ -75,4 +75,14 @@
         app:layout_constraintEnd_toEndOf="@+id/button2"
         app:layout_constraintStart_toStartOf="@+id/button2"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="move To SecondActivity"
+        android:onClick="moveToSecondActivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

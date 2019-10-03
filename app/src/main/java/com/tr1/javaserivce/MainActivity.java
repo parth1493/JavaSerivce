@@ -49,6 +49,13 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    public void moveToSecondActivity(View view) {
+
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
+
+
     @Override
     protected void onResume() {
         super.onResume();
