@@ -60,7 +60,7 @@ public class StartService extends Service {
             while (ctr <= sleepTime) {
                 try {
                     publishProgress(ctr+"");
-                    Thread.sleep(sleepTime * 1000);
+                    Thread.sleep( 1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
