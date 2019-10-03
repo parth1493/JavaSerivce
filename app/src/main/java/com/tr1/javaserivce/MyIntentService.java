@@ -2,6 +2,8 @@ package com.tr1.javaserivce;
 
 import android.app.IntentService;
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.ResultReceiver;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
@@ -9,8 +11,9 @@ import androidx.annotation.Nullable;
 public class MyIntentService extends IntentService {
 
     private static final String TAG = "MyIntentService";
-    public MyIntentService(String name) {
-        super(name);
+
+    public MyIntentService() {
+        super("MyWorkerThread");
     }
 
     @Override
@@ -22,7 +25,10 @@ public class MyIntentService extends IntentService {
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
         Log.i(TAG, "onHandleIntent: "+Thread.currentThread().getName());
+
         int sleepTime = intent.getIntExtra("sleepTime",1);
+
+        ResultReceiver myrResultReceiver = intent.getParcelableExtra("receiver");
 
         int ctr = 1;
         while (ctr <= sleepTime) {
@@ -34,6 +40,9 @@ public class MyIntentService extends IntentService {
             }
             ctr++;
         }
+        Bundle bundle = new Bundle();
+        bundle.putString("resultIntentService","Counter stopped"+ctr);
+        myrResultReceiver.send(18,bundle);
     }
 
     @Override

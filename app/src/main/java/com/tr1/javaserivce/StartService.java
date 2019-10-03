@@ -42,7 +42,7 @@ public class StartService extends Service {
         super.onDestroy();
     }
 
-    class MyAsync extends AsyncTask<Integer,String,Void> {
+    class MyAsync extends AsyncTask<Integer,String,String> {
 
         @Override
         protected void onPreExecute() {
@@ -51,7 +51,7 @@ public class StartService extends Service {
         }
 
         @Override
-        protected Void doInBackground(Integer... integers) {
+        protected String doInBackground(Integer... integers) {
 
             Log.i(TAG, "doInBackground: "+Thread.currentThread().getName());
             int sleepTime = integers[0];
@@ -66,7 +66,7 @@ public class StartService extends Service {
                 }
                 ctr++;
             }
-            return null;
+            return "Counter stopped"+ctr;
         }
 
         @Override
@@ -78,11 +78,15 @@ public class StartService extends Service {
         }
 
         @Override
-        protected void onPostExecute(Void aVoid) {
+        protected void onPostExecute(String Str) {
             Log.i(TAG, "onPostExecute: ");
-            Log.i(TAG, "Value: "+aVoid);
+            Log.i(TAG, "Value: "+Str);
             stopSelf();
-            super.onPostExecute(aVoid);
+            super.onPostExecute(Str);
+
+            Intent intent = new Intent("action.service");
+            intent.putExtra("startServiceExtra",Str);
+            sendBroadcast(intent);
         }
     }
 }
