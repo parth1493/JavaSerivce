@@ -81,6 +81,11 @@ public class MainActivity extends AppCompatActivity {
         startService(intent);
     }
 
+    public void btnMessengerActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, IPCMessageActivity.class);
+        startActivity(intent);
+    }
+
     class MyResultReceiver extends ResultReceiver {
 
         public MyResultReceiver(Handler handler) {

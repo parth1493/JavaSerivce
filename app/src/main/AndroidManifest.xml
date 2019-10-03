@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SecondActivity"></activity>
+        <activity android:name=".IPCMessageActivity"></activity>
+        <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +22,7 @@
         <service android:name=".StartService" />
         <service android:name=".MyIntentService" />
         <service android:name=".MyBoundService" />
+        <service android:name=".MyMessengerService" android:process=".my_own_process" />
     </application>
 
 </manifest>

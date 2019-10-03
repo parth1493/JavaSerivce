@@ -13,8 +13,10 @@
         android:text="Intent Service from ResutlReceiver "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/startIntentService"
+        app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="@+id/startIntentService"
-        app:layout_constraintTop_toBottomOf="@+id/startIntentService" />
+        app:layout_constraintTop_toBottomOf="@+id/startIntentService"
+        app:layout_constraintVertical_bias="0.152" />
 
     <Button
         android:id="@+id/button"
@@ -80,9 +82,23 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="move To SecondActivity"
+        android:layout_marginBottom="72dp"
         android:onClick="moveToSecondActivity"
+        android:text="move To SecondActivity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/btnMessengerActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Messenger Activity"
+        android:onClick="btnMessengerActivity"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
